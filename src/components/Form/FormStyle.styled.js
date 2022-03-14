@@ -38,7 +38,7 @@ padding: 5px 10px;
   border-radius: 7px;
   margin: 0 auto; 
   text-align: center;
-  
+  outline: none;
   &:hover{
       border: 2px solid blue;
    color: blue;

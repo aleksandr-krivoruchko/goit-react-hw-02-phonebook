@@ -6,7 +6,7 @@ export function ContactsList({ contacts }) {
     <ul>
       {contacts.map(item => (
       
-          <Contact name={item.name} id={item.id}/>
+          <Contact number={item.number} name={item.name} id={item.id}/>
         
       ))}
     </ul>
@@ -18,6 +18,7 @@ ContactsList.propTypes = {
     PropTypes.shape({
       id: PropTypes.string.isRequired,
       name: PropTypes.string.isRequired,
+		number: PropTypes.number.isRequired,
     })
   ),
 };
