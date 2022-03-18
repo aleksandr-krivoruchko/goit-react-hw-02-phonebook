@@ -37,19 +37,19 @@ reset = () => {
 
 
   render () {
-	  return <FormStyle onSubmit={this.handleSubmit}>
-    <Label htmlFor="111">Name</Label>
-    <Input
-	 id="111"
-	 value={this.state.name}
-	 onChange={this.handleChange}
-  className="form__input"
-  type="text"
-  name="name"
-  pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
-  title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
-      required
-    />
+	  return (<FormStyle onSubmit={this.handleSubmit}>
+            <Label htmlFor="111">Name</Label>
+            <Input
+              id="111"
+              value={this.state.name}
+              onChange={this.handleChange}
+              className="form__input"
+              type="text"
+              name="name"
+              pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
+              title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
+                required
+            />
 
     <Label htmlFor="222">Number</Label>
 <Input
@@ -64,7 +64,8 @@ id="222"
 />
 
     <Btn type="submit" >Add contact</Btn>
-  </FormStyle>}
+    </FormStyle>);
+  }
 }
 
 Form.propTypes = {
