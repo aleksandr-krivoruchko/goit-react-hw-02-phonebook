@@ -36,59 +36,10 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-image: linear-gradient(to bottom, #00b9ff 50%, #ffb800 50%);
+  /* background-color: #00b9ff; */
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
-}
-
-/* .section {
-  width: 500px;
-  margin: 0 auto;
-  margin-bottom: 20px;
-  padding-top: 20px;
-}
-.title {
-  font-size: 30px;
-  margin-bottom: 10px;
-  text-transform: uppercase;
-} */
-
-.trjhtr {
-  width: 100px;
-  height: 100px;
-  display: inline-block;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 50px;
-  display: inline-block;
-  font-size: 20px;
-  background-color: blue;
-  color: aliceblue;
-  border: none;
-  cursor: pointer;
-  padding: 5px;
-  margin-bottom: 10px;
-  border-radius: 5px;
-  margin: 0 auto;
-  text-align: center;
-}
-
-.wqdqwd {
-  font-weight: 500;
-  background-color: yellow;
-  border: none;
-  border-bottom: 1px solid blue;
-  outline: none;
-  background-image: repeating-linear-gradient(
-    to left,
-    blue,
-    blue 20px,
-    red 20px,
-    red 40px /* Опеределяет размер градиента */
-  );
-  -webkit-text-fill-color: transparent;
-  -webkit-text-stroke: red;
 }

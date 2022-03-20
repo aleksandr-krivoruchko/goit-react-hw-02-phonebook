@@ -36,13 +36,16 @@ reset = () => {
 
 
   render () {
+	  const {name, number} = this.state;
+	const inputId1 = nanoid();
+		const inputId2 = nanoid();
+
 	  return (<FormStyle onSubmit={this.handleSubmit}>
-		<Label htmlFor="111">Name</Label>
+		<Label htmlFor={inputId1}>Name</Label>
 		<Input
-			id="111"
-			value={this.state.name}
+			id={inputId1}
+			value={name}
 			onChange={this.handleChange}
-			className="form__input"
 			type="text"
 			name="name"
 			pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
@@ -50,11 +53,11 @@ reset = () => {
 				required
             />
 
-		<Label htmlFor="222">Number</Label>
+		<Label htmlFor={inputId2}>Number</Label>
 		<Input
-			id="222"
+			id={inputId2}
 			onChange={this.handleChange}
-			value={this.state.number}
+			value={number}
 			type="tel"
 			name="number"
 			pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
