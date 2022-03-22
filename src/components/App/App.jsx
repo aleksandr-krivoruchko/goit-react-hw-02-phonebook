@@ -3,24 +3,29 @@ import { Form } from "../Form/Form";
 import { Section } from "../Section/Section";
 import { ContactsList } from "../ContactsList/ContactsList";
 import { Filter } from "../Filter/Filter";
-
+import { nanoid } from 'nanoid';
 
 export class App extends Component {
   state = {
     contacts: [
-		 {id:'id-1', name:'Тарас Шевченко', number:'+3333333'},
-		{id:'id-2', name:'Ліна костенко', number:'+6666666'},
-		{id:'id-3', name:'Михайло Коцюбинський', number:'+4444444'},
-		 {id:'id-4', name:'Іван Франко', number:'+5555555'},
+      {id:'id-1', name:'Тарас Шевченко', number:'+3333333'},
+      {id:'id-2', name:'Ліна костенко', number:'+6666666'},
+      {id:'id-3', name:'Михайло Коцюбинський', number:'+4444444'},
+      {id:'id-4', name:'Іван Франко', number:'+5555555'},
     ],
     filter: "",
   }
 
   // Получение данных формы  и добавление контакта
   addContact = (data) => {
-if(this.checkExistingContact(data.name)) { return };
+    if(this.checkExistingContact(data.name)) { return };
 
-this.setState(({contacts}) => ({contacts: [data, ...contacts]}));
+    const contact = {
+      id: nanoid(),
+      ...data,
+    }
+    
+    this.setState(({contacts}) => ({contacts: [contact, ...contacts]}));
   }
   
   // Запись значения фильтра в свойство состояния
@@ -53,15 +58,15 @@ deleteContact = (contactId) => {
 }
 
   render() {
-	const {filter} = this.state;
-
+    const { filter } = this.state;
+    
     return <Section title="Phonebook">
-      <Form onSubmit={this.addContact}></Form>
-      <Section title="Contacts">
-        <Filter filter={filter}  setFilter={this.setFilter} ></Filter>
-      <ContactsList contacts={this.filterContacts()} deleteContact={this.deleteContact}></ContactsList>
-    </Section>
-    </Section>
+              <Form onSubmit={this.addContact}></Form>
+              <Section title="Contacts">
+                <Filter filter={filter}  setFilter={this.setFilter} ></Filter>
+                <ContactsList contacts={this.filterContacts()} deleteContact={this.deleteContact} ></ContactsList>
+              </Section>
+          </Section>
   }
 }
 
